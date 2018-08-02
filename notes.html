@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Notas</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="img/logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/ae555735af.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/notes.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <div class="navbar-fixed">
+    <nav id="navbar" class="row indigo lighten-1" role="navigation">
+      <div class="nav-wrapper">
+
+        <a href="/chats.html"><img class="left responsive-img logo-small" src="img/logo.png"></a>
+        <span class="title-navbar">Notas</span>
+
+        <ul class ="right">
+          <li><a href="/chats.html"><i class="fa fa-reply" aria-hidden="true"></i></a></li>
+          <li><a href="/"><i class="material-icons" title="Recargar página">refresh</i></a></li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+    </div>
+
+    <main>
+
+      <div id="containerN" class="row">
+
+      </div>
+
+    </main>
+
+    <footer class="footer_fixed row">
+
+      <div class="right button_send">
+          <button class="btn-floating indigo lighten-1 btn-large waves-effect waves-light red" onclick="sendNote()"><i class="material-icons">send</i></button>
+      </div>
+
+      <div class="input-field col s9 right">
+          <textarea id="nota" class="materialize-textarea"></textarea>
+          <label for="nota">Introduce una nota</label>
+      </div>
+
+    </footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Mensaje del chat</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="img/logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/ae555735af.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/messages.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <div id="modal_search" class="modal">
+      <div class="modal-content">
+        <h4>Buscar</h4><br>
+
+        <div class="input-field">
+          <input id="search" type="text">
+          <label for="search">Introduce palabras del mensaje</label>
+        </div>
+
+        <div class="button_send">
+          <button class="btn waves-effect waves-light right" type="submit" name="action" onclick="search()">Buscar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="navbar-fixed">
+    <nav id="navbar" class="row indigo lighten-1" role="navigation">
+    <div class="nav-wrapper">
+
+
+      <a href="/chats.html"><img class="left responsive-img logo-small" src="img/logo.png"></a>
+      <span class="title-navbar">Mensajes</span>
+
+      <ul class ="right">
+        <li><a href="/chats.html"><i class="fa fa-reply" aria-hidden="true"></i></a></li>
+        <li><a href="#modal_search"><i class="material-icons" title="Buscar elementos">search</i></a></li>
+        <li><a id="notes" href="/notes.html"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
+        <li><a onclick="closeSesion()"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  </div>
+
+    <main>
+
+      <div id="elements" class="row">
+
+
+        <center id="preload">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </center>
+
+        <div id="rating" style="display:none;" class="row">
+          <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3 ">
+            <div class="card-panel circular_border_55 z-depth-4">
+              <center>
+                <img class="circle img_user_messages" src="img/avatar.png" alt="">
+                <span id="username" class="text_name_user center-align"></span>
+                <span id="online"><img class="online_offline" src="img/offline.png" alt=""></span><br>
+
+                <div class="stars">
+                  <form action="">
+                    <input class="star star-5" onclick="sendValoration(this.id)" id="star-5" type="radio" name="star"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" onclick="sendValoration(this.id)" id="star-4" type="radio" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" onclick="sendValoration(this.id)" id="star-3" type="radio" name="star"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" onclick="sendValoration(this.id)" id="star-2" type="radio" name="star"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" onclick="sendValoration(this.id)" id="star-1" type="radio" name="star"/>
+                    <label class="star star-1" for="star-1"></label>
+                  </form>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <br><br><div id="containerM">
+
+          <!--
+          <div class="row row_card">
+            <div class="card-panel teal darken-1 message_card right">
+              <div class="right">
+                <p class="white-text message_text">Dile que te dio poco que quieres mas</p>
+                <p class="white-text datetime">12/02/2017 10:45</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row_card">
+            <div class="card-panel cyan darken-1 message_card left">
+              <div class="left div_100">
+                <p class="white-text left message_text">Mas? Pero si tengo moratones por todo el cuerpo</p>
+              </div>
+              <div>
+                <p class="white-text datetime">12/02/2017 10:45</p>
+              </div>
+            </div>
+          </div>
+        -->
+
+
+
+
+      </div><br><br><br>
+
+      </div>
+
+    </main>
+
+    <footer class="footer_fixed row">
+
+      <div class="right button_send">
+          <button class="btn-floating indigo lighten-1 btn-large waves-effect waves-light red" onclick="send()"><i class="material-icons">send</i></button>
+      </div>
+
+      <div class="input-field col s9 right">
+          <input id="message" type="text" class="validate">
+          <label for="message">Introduce el mensaje</label>
+      </div>
+
+    </footer>
+
+
+
+  </body>
+</html>

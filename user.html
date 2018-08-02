@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Modificar usuario</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="img/logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/ae555735af.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/user.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <div class="navbar-fixed">
+    <nav id="navbar" class="row indigo lighten-1" role="navigation">
+    <div class="nav-wrapper">
+
+      <a href="/chats.html"><img class="left responsive-img logo-small" src="img/logo.png"></a>
+      <span class="title-navbar">Usuario</span>
+
+      <ul class ="right">
+        <li><a href="/chats.html"><i class="fa fa-reply" aria-hidden="true"></i></a></li>
+        <li><a href="/"><i class="material-icons" title="Recargar página">refresh</i></a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  </div>
+
+    <main class="valign-wrapper">
+
+      <div id="container" class="row">
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="username" type="text" class="validate">
+          <label for="username">Nombre de usuario</label>
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock_outline</i>
+          <input id="pass" type="password" class="validate">
+          <label for="pass">Contraseña</label>
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock_open</i>
+          <input id="passFalse" type="password" class="validate">
+          <label for="passFalse">Contraseña trampa</label>
+        </div>
+
+        <div class="col s12 center">
+          <br><br><button class="btn indigo" type="submit" onclick="modifyUser()">Modificar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+
+
+      </div>
+
+    </main>
+
+
+
+  </body>
+</html>

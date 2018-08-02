@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Chats</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="img/logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/ae555735af.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chats.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <div id="modal_search" class="modal">
+      <div class="modal-content">
+        <h4>Buscar</h4><br>
+
+        <div class="input-field">
+          <input id="search" type="text">
+          <label for="search">Introduce el nombre de un usuario</label>
+        </div>
+
+        <div class="button_send">
+          <button class="btn waves-effect waves-light right" type="submit" name="action" onclick="search()">Buscar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="navbar-fixed">
+    <nav id="navbar" class="row indigo lighten-1" role="navigation">
+    <div class="nav-wrapper">
+
+      <a href="/chats.html"><img class="left responsive-img logo-small" src="img/logo.png"></a>
+      <span class="title-navbar">Conversaciones</span>
+
+      <ul class ="right">
+        <li><a href="#modal_search"><i class="material-icons" title="Buscar elementos">search</i></a></li>
+        <li><a href="/user.html"><i class="fa fa-address-card" aria-hidden="true"></i></a></li>
+        <li><a onclick="closeSesion()"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  </div>
+
+    <main>
+
+      <div id="elements" class="row">
+
+
+        <center id="preload">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </center>
+
+        <!--
+        <div id="card-id" class="col s12 m6 l4">
+          <div class="card circular_border hoverable white z-depth-3">
+            <div class="card-content content_card_user">
+              <div class="row valign-wrapper row-title">
+                <div><a href="chats.html?value='+data.Phone+'"><img src="/img/avatar.png" alt="" class="circle img_user"></a></div>
+                <div class="col s10 left_position"><a class="card-title text_title_card truncate" href="chats.html?value=idChat">Flori la descuartizada</a></div>
+              </div>
+              <div class="col s7">
+                <br><p class="truncate text_content_card_user">01:10 01/08/2017</p>
+              </div>
+              <div class="boton_margin_top">
+                <button class="btn-floating tooltipped waves-effect waves-light teal right" data-position="bottom" data-delay="50" data-tooltip="Desautorizar usuario" onclick = delete_element("id")><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      -->
+
+      </div>
+
+    </main>
+
+
+
+  </body>
+</html>
